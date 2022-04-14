@@ -4,7 +4,7 @@
   <!-- Reset Password basic -->
   <div class="card mb-0">
     <div class="card-body">
-        <a href="index.html" class="brand-logo">
+        <a href=" " class="brand-logo">
             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                 <defs>
                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -34,30 +34,37 @@
         <h4 class="card-title mb-1">بازنشانی رمز عبور 🔒 </h4>
         <p class="card-text mb-2">رمز عبور جدید شما باید با رمزهای عبور استفاده شده قبلی متفاوت باشد</p>
 
-        <form class="auth-reset-password-form mt-2" action="auth-login-basic.html" method="POST">
+        <form class="auth-reset-password-form mt-2" action="{{ route('password.update') }}" method="POST">
+            @csrf
+            <input type="hidden" name="token" value="{{ request()->token }}">
             <div class="mb-1">
-                <div class="d-flex justify-content-between">
-                    <label class="form-label" for="reset-password-new">رمزعبور</label>
-                </div>
+                <label for="email" class="form-label">ایمیل</label>
+                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                 id="email" name="email" value="{{ old('email',$request->email) }}" placeholder="aliamiri@gmail.com" readonly/>
+                 <span class="error">@error('email') {{$message}} @enderror</span>
+            </div>
+            <div class="mb-1">
+                <label for="password" class="form-label">رمزعبور</label>
                 <div class="input-group input-group-merge form-password-toggle">
-                    <input type="password" class="form-control form-control-merge" id="reset-password-new" name="reset-password-new" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="reset-password-new" tabindex="1" autofocus />
+                    <input type="password" class="form-control form-control-merge"
+                     id="password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="1" autofocus="" />
                     <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                    <span class="error">@error('password') {{$message}} @enderror</span>
                 </div>
             </div>
             <div class="mb-1">
-                <div class="d-flex justify-content-between">
-                    <label class="form-label" for="reset-password-confirm">تکرار رمزعبور</label>
-                </div>
+                <label for="password_confirmation" class="form-label">تکرار رمزعبور</label>
                 <div class="input-group input-group-merge form-password-toggle">
-                    <input type="password" class="form-control form-control-merge" id="reset-password-confirm" name="reset-password-confirm" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="reset-password-confirm" tabindex="2" />
+                    <input type="password" class="form-control form-control-merge"
+                    id="password_confirmation" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="2" />
                     <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                 </div>
             </div>
-            <button class="btn btn-primary w-100" tabindex="3">تنظیم رمز جدید</button>
+            <button type="submit" class="btn btn-primary w-100" tabindex="3">تنظیم رمز جدید</button>
         </form>
 
         <p class="text-center mt-2">
-            <a href="auth-login-basic.html"> <i data-feather="chevron-left"></i> بازگشت به ورود </a>
+            <a href="{{ route('login')}}"> <i data-feather="chevron-left"></i> بازگشت به ورود </a>
         </p>
     </div>
 </div>

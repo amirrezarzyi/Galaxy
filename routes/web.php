@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,9 +19,19 @@ Route::view('/admin', 'admin.dashboard');
 Route::view('/admin/user', 'admin.page.user.index');
 Route::view('/admin/user/create', 'admin.page.user.create');
 Route::view('/admin/user/profile', 'admin.page.user.profile');
-Route::view('/login', 'auth.login');
-Route::view('/register', 'auth.register');
-Route::view('/forget-password', 'auth.forget-password');
-Route::view('/reset-password', 'auth.reset-password');
-Route::view('/verify-email', 'auth.verify-email');
-Route::view('/two-factor', 'auth.two-factor-challenge');
+// Route::view('/login', 'auth.login');
+// Route::view('/register', 'auth.register');
+// Route::view('/forget-password', 'auth.forget-password');
+// Route::view('/reset-password', 'auth.reset-password');
+// Route::view('/verify-email', 'auth.verify-email');
+// Route::view('/two-factor', 'auth.two-factor-challenge');
+
+Route::prefix('/admin')->middleware(['auth','verified'])->group(function() {
+
+    //Dashboard
+    Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
+
+});
+
+
+

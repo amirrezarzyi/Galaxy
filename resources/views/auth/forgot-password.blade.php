@@ -4,7 +4,7 @@
  <!-- Forgot Password basic -->
  <div class="card mb-0">
     <div class="card-body">
-        <a href="index.html" class="brand-logo">
+        <a href=" " class="brand-logo">
             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                 <defs>
@@ -42,16 +42,26 @@
         <h4 class="card-title mb-1">رمز عبور را فراموش کرده اید؟ 🔒</h4>
         <p class="card-text mb-2">ایمیل خود را وارد کنید و ما دستورالعمل هایی را برای بازنشانی رمز عبور برای شما ارسال خواهیم کرد</p>
 
-        <form class="auth-forgot-password-form mt-2" action="auth-reset-password-basic.html" method="POST">
+        <form class="auth-forgot-password-form mt-2" action="{{ route('password.email')}}" method="POST">
+            @csrf
             <div class="mb-1">
-                <label for="forgot-password-email" class="form-label">ایمیل</label>
-                <input type="text" class="form-control" id="forgot-password-email" name="forgot-password-email" placeholder="john@example.com" aria-describedby="forgot-password-email" tabindex="1" autofocus />
+                <label for="email" class="form-label">ایمیل</label>
+                <input type="text" class="form-control @error('email') is-invalid @enderror"
+                 id="email" name="email" value="{{ old('email') }}" placeholder="aliamiri@gmail.com" tabindex="1" autofocus="" />
+                 <span class="error">@error('email') {{$message}} @enderror</span>
+                 @if(session('status'))
+                    <div class="alert alert-success mt-1" role="alert">
+                        <h4 class="alert-heading">{{ session('status') }}</h4>
+                        <div class="alert-body">صندوق ایمیل خود را بررسی کنید </div>
+                    </div>
+                 @endif
+
             </div>
-            <button class="btn btn-primary w-100" tabindex="2">ارسال درخواست</button>
+            <button type="submit" class="btn btn-primary w-100" tabindex="2">ارسال درخواست</button>
         </form>
 
         <p class="text-center mt-2">
-            <a href="auth-login-basic.html"> <i data-feather="chevron-left"></i> بازگشت به ورود </a>
+            <a href="{{ route('login')}}"> <i data-feather="chevron-left"></i> بازگشت به ورود </a>
         </p>
     </div>
 </div>

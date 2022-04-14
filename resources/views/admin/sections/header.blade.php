@@ -20,7 +20,11 @@
                 <a class="dropdown-item" href="/admin/user/profile"><i class="me-50" data-feather="user"></i> پروفایل</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i> تنظیمات</a>
-                <a class="dropdown-item" href="auth-login-cover.html"><i class="me-50" data-feather="power"></i> خروج </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                    @csrf
+                </form>
+                <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();" title="خروج"><i class="me-50" data-feather="power"></i> خروج </a>
              </div>
           </li>
        </ul>

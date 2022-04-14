@@ -39,30 +39,25 @@
             <h2 class="brand-text text-primary ms-1">Galaxy</h2>
         </a>
 
-        <h2 class="card-title fw-bolder mb-1">ایمیل خود را تایید کنید ✉️</h2>
-        <p class="card-text mb-2">
-             <span class="fw-bolder text-primary">{{ Auth()->user()->name  }} </span>عزیز ما پیوندی به آدرس ایمیل شما
-             <span class="fw-bolder text-primary">{{ Auth()->user()->email }}</span> ارسال کرده ایم لطفا دریافتی های خود را بررسی کنید .
-             <span class="error">@error('email') {{$message}} @enderror</span>
-        </p>
+        <h2 class="card-title fw-bolder mb-1">تایید رمز عبور 🔑</h2>
+        <p class="card-text mb-2">برای فعالسازی دو مرحله ای کردن نیاز به تایید رمز عبور میباشد</p>
 
-        <a href="/" class="btn btn-primary w-100">فعلا رد شوید</a>
-        <form action="{{ route('verification.send') }}" method="post">
+        <form class="auth-login-form mt-2" action="{{ route('password.confirm') }}" method="POST">
             @csrf
-            <p class="text-center mt-2">
-                <span>ایمیلی دریافت نکردید؟
-                </span>
-                <button type="submit" class="btn btn-outline-primary">
-                    <span>&nbsp;ارسال مجدد </span>
-                </button>
-                @if(session('status'))
-                    <div class="alert alert-success mt-1" role="alert">
-                        <h4 class="alert-heading">ایمیل مجددا ارسال شد</h4>
-                        <div class="alert-body">صندوق ایمیل خود را بررسی کنید </div>
-                    </div>
-                 @endif
-            </p>
+            <div class="mb-1">
+                <div class="d-flex justify-content-between">
+                    <label class="form-label" for="login-password">رمزعبور</label>
+                </div>
+                <div class="input-group input-group-merge form-password-toggle">
+                    <input type="password" class="form-control form-control-merge"
+                     id="password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="2" />
+                    <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                    <span class="error">@error('password') {{$message}} @enderror</span>
+                </div>
+            </div> 
+            <button type="submit" class="btn btn-primary w-100" tabindex="4">ورود</button>
         </form>
+
     </div>
 </div>
 <!-- / verify email basic -->

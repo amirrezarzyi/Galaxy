@@ -4,7 +4,7 @@
 <!-- two steps verification basic-->
 <div class="card mb-0">
     <div class="card-body">
-        <a href="index.html" class="brand-logo">
+        <a href=" " class="brand-logo">
             <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                 <defs>
                     <lineargradient id="linearGradient-1" x1="100%" y1="10.5120544%" x2="50%" y2="89.4879456%">
@@ -32,26 +32,30 @@
         </a>
 
         <h2 class="card-title fw-bolder mb-1">تایید دو مرحله ای 💬</h2>
-        <p class="card-text mb-75">
+        {{-- <p class="card-text mb-75">
             ما یک کد تأیید به تلفن همراه شما ارسال کردیم. کد تلفن همراه را در فیلد زیر وارد کنید.
-        </p>
-        <p class="card-text fw-bolder mb-2">******hjrezi </p>
+        </p> --}}
+        {{-- <p class="card-text fw-bolder mb-2">******hjrezi </p> --}}
 
-        <form class="mt-2" action="index.html" method="POST">
+        <form class="mt-2" action="{{ route('two-factor.login') }}" method="POST">
+            @csrf
             <h6>کد امنیتی 6 رقمی خود را تایپ کنید : </h6>
-            <input type="number" class="form-control mt-2" placeholder="...Enter Code">
+            <input id="code" type="code" class="form-control mt-2 @error('code') is-invalid @enderror" name="code" required autocomplete="current-code" placeholder="...Enter Code"  autofocus="">
+             @error('code') <span class="invalid-feedback">کد احراز هویت دو عاملی ارائه شده نامعتبر بود.</span> @enderror
             <button type="submit" class="btn btn-primary w-100 mt-2" tabindex="4">وارد شدن</button>
         </form>
         <hr>
-        <form action="index.html" method="POST">
+        <form class="mt-2" action="{{ route('two-factor.login') }}" method="POST">
+            @csrf
             <h6>از طریق کد بازیابی : </h6>
-            <input type="number" class="form-control mt-2" placeholder="...Enter Code">
+            <input id="code" type="code" class="form-control mt-2 @error('recovery_code') is-invalid @enderror" name="recovery_code" required autocomplete="recovery_code" placeholder="...Enter Code"  autofocus="">
+             @error('recovery_code') <span class="invalid-feedback">کد احراز هویت دو عاملی ارائه شده نامعتبر بود.</span> @enderror
             <button type="submit" class="btn btn-outline-primary w-100 mt-2" tabindex="4">وارد شدن</button>
         </form>
 
-        <p class="text-center mt-2">
-            <span>کد را دریافت نکردید؟ </span><a href="Javascript:void(0)"><span>&nbsp;ارسال مجدد </span></a>
-        </p>
+        {{-- <p class="text-center mt-2">
+            <span>کد را دریافت نکردید؟ </span><a href=""><span>&nbsp;ارسال مجدد </span></a>
+        </p> --}}
     </div>
 </div>
 <!-- /two steps verification basic -->

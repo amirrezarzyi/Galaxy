@@ -4,7 +4,7 @@
     <!-- Login basic -->
     <div class="card mb-0">
         <div class="card-body">
-            <a href="index.html" class="brand-logo">
+            <a href=" " class="brand-logo">
                 <svg viewbox="0 0 139 95" version="1.1" xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink" height="28">
                     <defs>
@@ -40,40 +40,54 @@
             </a>
 
             <h4 class="card-title mb-1">  شروع کنید به ایجاد حساب! 🚀</h4>
-            <p class="card-text mb-2">لطفا حساب کاربری خود را ایجاد و سفر خود را آغاز کنید</p>
+            {{-- <p class="card-text mb-2">لطفا حساب کاربری خود را ایجاد و سفر خود را آغاز کنید</p> --}}
 
-            <form class="auth-register-form mt-2" action="index.html" method="POST">
+            <form class="auth-register-form mt-2" action="{{ route('register') }}" method="POST">
+                @csrf
                 <div class="mb-1">
-                    <label for="register-username" class="form-label">نام و نام خانوادگی</label>
-                    <input type="text" class="form-control" id="register-username" name="register-username" placeholder="johndoe" aria-describedby="register-username" tabindex="1" autofocus />
+                    <label for="name" class="form-label">نام و نام خانوادگی</label>
+                    <input type="text" class="form-control @error('name') is-invalid @enderror"
+                     id="name" name="name" value="{{ old('name') }}" placeholder="علی امیری" tabindex="1" autofocus />
+                     <span class="error">@error('name') {{$message}} @enderror</span>
                 </div>
                 <div class="mb-1">
-                    <label for="register-email" class="form-label">ایمیل</label>
-                    <input type="text" class="form-control" id="register-email" name="register-email" placeholder="john@example.com" aria-describedby="register-email" tabindex="2" />
+                    <label for="email" class="form-label">ایمیل</label>
+                    <input type="text" class="form-control @error('email') is-invalid @enderror"
+                     id="email" name="email" value="{{ old('email') }}" placeholder="aliamiri@gmail.com" tabindex="2" />
+                     <span class="error">@error('email') {{$message}} @enderror</span>
                 </div>
-
                 <div class="mb-1">
-                    <label for="register-password" class="form-label">رمزعبور</label>
-
+                    <label for="password" class="form-label">رمزعبور</label>
                     <div class="input-group input-group-merge form-password-toggle">
-                        <input type="password" class="form-control form-control-merge" id="register-password" name="register-password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
+                        <input type="password" class="form-control form-control-merge"
+                         id="password" name="password" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="3" />
+                        <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
+                        <span class="error">@error('password') {{$message}} @enderror</span>
+                    </div>
+                </div>
+                <div class="mb-1">
+                    <label for="password_confirmation" class="form-label">تکرار رمزعبور</label>
+                    <div class="input-group input-group-merge form-password-toggle">
+                        <input type="password" class="form-control form-control-merge"
+                        id="password_confirmation" name="password_confirmation" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" aria-describedby="register-password" tabindex="4" />
                         <span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
                     </div>
                 </div>
-                <div class="mb-1">
+                {{-- <div class="mb-1">
                     <div class="form-check">
-                        <input class="form-check-input" type="checkbox" id="register-privacy-policy" tabindex="4" />
-                        <label class="form-check-label" for="register-privacy-policy">
+                        <input class="form-check-input" type="checkbox" id="policy" tabindex="5"/>
+                        <label class="form-check-label" for="policy">
                             <a href="#"> من با شرایط و مقررات </a> موافقم
+                            <span class="error">@error('policy') {{$message}} @enderror</span>
                         </label>
                     </div>
-                </div>
-                <button class="btn btn-primary w-100" tabindex="5">ثبت نام</button>
+                </div> --}}
+                <button type="submit" class="btn btn-primary w-100" tabindex="5">ثبت نام</button>
             </form>
 
             <p class="text-center mt-2">
-                <span> یک حساب کاربری قبلا ایجاد کردید?</span>
-                <a href="auth-register-basic.html">
+                <span> یک حساب کاربری قبلا ایجاد کردید؟</span>
+                <a href="{{ route('login') }}">
                     <span>با حساب خود وارد شوید</span>
                 </a>
             </p>
