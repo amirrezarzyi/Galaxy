@@ -2,9 +2,8 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\User\ProfileController;
-use App\Http\Controllers\Admin\UserController;
-use Illuminate\Support\Facades\Route;
-use Jenssegers\Agent\Agent;
+use App\Http\Controllers\Admin\User\UserController;
+use Illuminate\Support\Facades\Route; 
 
 /*
 |--------------------------------------------------------------------------

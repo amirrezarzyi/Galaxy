@@ -66,7 +66,8 @@
             </div>
         </div>
         <div class="bs-stepper-content">
-        <form action="hi" method="GET">
+        <form action="{{ route('admin.user.store') }}" method="POST">
+            @csrf
             <div id="account-details-vertical" class="content" role="tabpanel" aria-labelledby="account-details-vertical-trigger">
                 <div class="content-header">
                     <h5 class="mb-0">جزئیات حساب </h5>
@@ -74,22 +75,22 @@
                 </div>
                 <div class="row">
                     <div class="mb-1 col-md-6">
-                        <label class="form-label" for="vertical-username">نام کاربری</label>
-                        <input type="text" id="vertical-username" class="form-control" placeholder="علی امیری" />
+                        <label class="form-label" for="name">نام کاربری</label>
+                        <input type="text" id="name" name="name" class="form-control" placeholder="علی امیری" />
                     </div>
                     <div class="mb-1 col-md-6">
-                        <label class="form-label" for="vertical-email">ایمیل</label>
-                        <input type="email" id="vertical-email" class="form-control" placeholder="aliamiri@email.com" aria-label="john.doe" />
+                        <label class="form-label" for="email">ایمیل</label>
+                        <input type="email" id="email" name="email" class="form-control" placeholder="aliamiri@email.com" aria-label="john.doe" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-1 form-password-toggle col-md-6">
-                        <label class="form-label" for="vertical-password">رمزعبور</label>
-                        <input type="password" id="vertical-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                        <label class="form-label" for="password">رمزعبور</label>
+                        <input type="password" id="password" name="password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
                     </div>
                     <div class="mb-1 form-password-toggle col-md-6">
-                        <label class="form-label" for="vertical-confirm-password">تایید رمزعبور</label>
-                        <input type="password" id="vertical-confirm-password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                        <label class="form-label" for="password_confirmation">تایید رمزعبور</label>
+                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">

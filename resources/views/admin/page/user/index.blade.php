@@ -111,7 +111,7 @@
                         </div>
                         <div class="col-sm-12 col-lg-8"> </div>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive p-2">
                         <table class="table mt-2">
                             <thead>
                                 <tr>
@@ -123,14 +123,15 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach ($users as $user)
                                 <tr>
-                                    <td>1</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>
                                         <img src="{{ asset('admin-assets/app-assets/images/portrait/small/avatar-s-0.jpg') }}"
                                             class="me-75" height="20" width="20" alt="Angular">
-                                        <span class="fw-bold">امیررضا رضایی</span>
+                                        <span class="fw-bold">{{$user->name}}</span>
                                     </td>
-                                    <td>hjrezi1999@gmail.com</td>
+                                    <td>{{$user->email}}</td>
                                     <td>
                                         <span class="badge rounded-pill badge-light-primary me-1">مدیر</span></td>
                                     <td>
@@ -153,15 +154,12 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                         </table>
-                        <nav aria-label="Page navigation">
-                            <ul class="pagination mt-4 px-2">
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            </ul>
-                        </nav>
+                         <div class="mt-4">
+                              {{$users->links()}}
+                         </div>
                     </div>
                 </div>
             </div>
