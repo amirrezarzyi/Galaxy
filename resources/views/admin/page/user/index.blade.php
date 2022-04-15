@@ -106,7 +106,7 @@
                     <div class="d-flex justify-content-between align-items-center header-actions text-nowrap mx-1 row mt-75">
                         <div class="col-sm-12 col-lg-4 d-flex justify-content-center justify-content-lg-start">
                             <div class="dt-buttons btn-group flex-wrap">
-                                <a class="btn add-new btn-primary mt-50" href="/admin/user/create"><span>ایجاد کاربر</span></a>
+                                <a class="btn add-new btn-primary mt-50" href="{{ route('admin.user.create') }}"><i data-feather='user-plus'></i> <span>ایجاد کاربر</span></a>
                             </div>
                         </div>
                         <div class="col-sm-12 col-lg-8"> </div>

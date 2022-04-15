@@ -55,7 +55,7 @@
              </a>
              <ul class="menu-content">
                 <li>
-                   <a class="d-flex align-items-center" href="admin/user">
+                   <a class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
                       <i data-feather='circle'></i>
                       <span class="menu-item text-truncate" data-i18n="List">لیست مدیران</span>
                    </a>
@@ -69,13 +69,13 @@
              </a>
              <ul class="menu-content">
                 <li>
-                   <a class="d-flex align-items-center" href="admin/user">
+                   <a class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
                       <i data-feather='circle'></i>
                       <span class="menu-item text-truncate" data-i18n="List">نقش ها</span>
                    </a>
                 </li>
                 <li>
-                   <a class="d-flex align-items-center" href="admin/user">
+                   <a class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
                       <i data-feather='circle'></i>
                       <span class="menu-item text-truncate" data-i18n="List">دسترسی ها</span>
                    </a>

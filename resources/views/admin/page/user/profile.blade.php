@@ -258,24 +258,35 @@
                      <div class="col-12 col-md-6">
                         <div class="col-12 bg-light-secondary position-relative rounded p-2">
                            <div class="d-flex align-items-center justify-content-between">
-                              <h4 class="mb-1 me-1"><span><img src="{{ asset('admin-assets/app-assets/images/icons/'.strtolower($agent->browser()).'.png') }}" class="rounded me-1" height="20" alt="Google Chrome"></span>{{$agent->platform()}} - {{$agent->browser()}}
-                                 {{-- @dd($session->id) --}}
+                              <h4 class="mb-1 me-1">
+                                  <span>
+                                      <img src="{{ asset('admin-assets/app-assets/images/icons/'.strtolower($agent->browser()).'.png') }}" class="rounded me-1" height="20" alt="Google Chrome">
+                                  </span>
+                                 {{$agent->platform() }}
+                                 @if($agent->isMobile())    <i data-feather='smartphone'></i>@endif
+                                 @if($agent->is('Windows')) <i data-feather='monitor'></i>   @endif
+                                 - {{$agent->browser()}}
+
                             @if($session->id === request()->session()->getId())
                                  <span class="badge badge-light-success">شما</span>
                             @endif
                               </h4>
                             @unless($session->id === request()->session()->getId())
-                                 <form action="{{ route('admin.profile.session.destroy' ,$session->user_id) }}" method="POST">
+                                 <form action="{{ route('admin.user.profile.session.destroy' ,$session->user_id) }}" method="POST">
                             @csrf
                             @method('DELETE')
                                  <button type="submit" class="btn btn-outline-danger">خارج شدن</button>
                               </form>
                             @endunless
                            </div>
-                           <h6 class="d-flex align-items-center fw-bolder ms-3">
+                           <h6 class="d-flex align-items-center fw-bolder">
                               <span class="me-50">{{ $session->ip_address }}</span>
                            </h6>
+                        @if($session->id === request()->session()->getId())
+                           <p class="mt-1"><span class="text-success"><i data-feather='activity'></i> آنلاین </span>  </p>
+                           @else
                            <p class="mt-1">آخرین بازدید : {{ jdate($session->last_activity)->ago() }}</p>
+                        @endif
                         </div>
                      </div>
                     @endforeach

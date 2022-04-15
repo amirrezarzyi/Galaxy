@@ -13,7 +13,7 @@ use Morilog\Jalali\Jalalian;
 class ProfileController extends Controller
 {
     public function index()
-    { 
+    {
         $agent = new Agent();
         $sessions = DB::table('sessions')->where('user_id', '=', Auth::user()->id)->orderby('last_activity','DESC')->get();
 
@@ -23,6 +23,6 @@ class ProfileController extends Controller
     public function destroy(Session $session)
     {
         $session->delete();
-        return redirect()->route('admin.profile');
+        return redirect()->route('admin.user.profile');
     }
 }

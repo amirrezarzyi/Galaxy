@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\User\ProfileController;
+use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Jenssegers\Agent\Agent;
 
@@ -16,31 +17,30 @@ use Jenssegers\Agent\Agent;
 |
 */
 
+//Home
 Route::get('/', function () { return view('welcome'); });
-// Route::view('/admin', 'admin.dashboard');
-// Route::view('/admin/user', 'admin.page.user.index');
-// Route::view('/admin/user/create', 'admin.page.user.create');
-// Route::view('/admin/user/profile', 'admin.page.user.profile');
-// Route::get('/admin/user/profile', function () {
-//     return view('admin.page.user.profile', [
-//         'agent' => new Agent(),
-//     ]);
-// });
-// Route::view('/login', 'auth.login');
-// Route::view('/register', 'auth.register');
-// Route::view('/forget-password', 'auth.forget-password');
-// Route::view('/reset-password', 'auth.reset-password');
-// Route::view('/verify-email', 'auth.verify-email');
-// Route::view('/two-factor', 'auth.two-factor-challenge');
 
-Route::prefix('/admin')->middleware(['auth','verified'])->group(function() {
+
+Route::prefix('/admin')->middleware(['auth', 'verified'])->group(function () {
 
     //Dashboard
     Route::get('/', [DashboardController::class, 'index'])->name('admin.dashboard');
-    //profile
-    Route::get('/profile', [ProfileController::class, 'index'])->name('admin.profile');
-    Route::delete('/profile/session/{session:user_id}', [ProfileController::class,'destroy'])->name('admin.profile.session.destroy');
+
+    //User
+    Route::prefix('user')->group(function () {
+
+        //users
+        Route::get('/', [UserController::class, 'index'])->name('admin.user.index');
+        Route::get('/create', [UserController::class, 'create'])->name('admin.user.create');
+        Route::post('/store', [UserController::class, 'store'])->name('admin.user.store');
+        Route::delete('/destroy/{user}', [UserController::class, 'destroy'])->name('admin.user.destroy');
+
+        //profile
+        Route::prefix('/profile')->group(function () {
+            Route::get('/', [ProfileController::class, 'index'])->name('admin.user.profile');
+            Route::delete('/session/{session:user_id}', [ProfileController::class, 'destroy'])->name('admin.user.profile.session.destroy');
+        });
+
+    });
+
 });
-
-
-

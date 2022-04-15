@@ -30,7 +30,7 @@
 @section('title', 'کاربران')
 @section('title-h2', 'کاربران')
 @section('title-li')
-    <li class="breadcrumb-item"><a href="">لیست کاربران</a> </li>
+    <li class="breadcrumb-item"><a href="{{ route('admin.user.index') }}">لیست کاربران</a> </li>
     <li class="breadcrumb-item">ایجاد کاربر</li>
 @endsection
 @section('content')
@@ -75,11 +75,11 @@
                 <div class="row">
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="vertical-username">نام کاربری</label>
-                        <input type="text" id="vertical-username" class="form-control" placeholder="johndoe" />
+                        <input type="text" id="vertical-username" class="form-control" placeholder="علی امیری" />
                     </div>
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="vertical-email">ایمیل</label>
-                        <input type="email" id="vertical-email" class="form-control" placeholder="john.doe@email.com" aria-label="john.doe" />
+                        <input type="email" id="vertical-email" class="form-control" placeholder="aliamiri@email.com" aria-label="john.doe" />
                     </div>
                 </div>
                 <div class="row">
@@ -111,11 +111,11 @@
                 <div class="row">
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="vertical-first-name">نام</label>
-                        <input type="text" id="vertical-first-name" class="form-control" placeholder="John" />
+                        <input type="text" id="vertical-first-name" class="form-control" placeholder="علی" />
                     </div>
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="vertical-last-name">نام خانوادگی</label>
-                        <input type="text" id="vertical-last-name" class="form-control" placeholder="Doe" />
+                        <input type="text" id="vertical-last-name" class="form-control" placeholder="امیری" />
                     </div>
                 </div>
                 <div class="row">
@@ -159,21 +159,21 @@
                 <div class="row">
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="vertical-address">آدرس</label>
-                        <input type="text" id="vertical-address" class="form-control" placeholder="98  Borough bridge Road, Birmingham" />
+                        <input type="text" id="vertical-address" class="form-control" placeholder="بلوار زمستان خیابان دی 82 پلاک 30" />
                     </div>
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="vertical-landmark">استان</label>
-                        <input type="text" id="vertical-landmark" class="form-control" placeholder="Borough bridge" />
+                        <input type="text" id="vertical-landmark" class="form-control" placeholder="خراسان جنوبی" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="pincode2">کدپستی</label>
-                        <input type="text" id="pincode2" class="form-control" placeholder="658921" />
+                        <input type="text" id="pincode2" class="form-control" placeholder="123456789" />
                     </div>
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="city2">شهر</label>
-                        <input type="text" id="city2" class="form-control" placeholder="Birmingham" />
+                        <input type="text" id="city2" class="form-control" placeholder="بیرحند" />
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">

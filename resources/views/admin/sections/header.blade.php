@@ -7,7 +7,7 @@
           <ul class="nav navbar-nav bookmark-icons">
              <li class="nav-item d-none d-lg-block">
              <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a></li>
-             </li> 
+             </li>
           </ul>
        </div>
        <ul class="nav navbar-nav align-items-center ms-auto">
@@ -17,7 +17,7 @@
                 <span class="avatar"><img class="round" src="{{ asset('admin-assets/app-assets/images/portrait/small/avatar-s-0.jpg') }}" alt="avatar" height="40" width="40"><span class="avatar-status-online"></span></span>
              </a>
              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-user">
-                <a class="dropdown-item" href="{{route('admin.profile')}}"><i class="me-50" data-feather="user"></i> پروفایل</a>
+                <a class="dropdown-item" href="{{route('admin.user.profile')}}"><i class="me-50" data-feather="user"></i> پروفایل</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="page-account-settings-account.html"><i class="me-50" data-feather="settings"></i> تنظیمات</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
