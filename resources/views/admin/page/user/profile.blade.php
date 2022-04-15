@@ -275,7 +275,7 @@
                            <h6 class="d-flex align-items-center fw-bolder ms-3">
                               <span class="me-50">{{ $session->ip_address }}</span>
                            </h6>
-                           <p class="mt-1">آخرین بازدید : {{date("H:i:s - Y/m/d", $session->last_activity) }}</p>
+                           <p class="mt-1">آخرین بازدید : {{ jdate($session->last_activity)->ago() }}</p>
                         </div>
                      </div>
                     @endforeach

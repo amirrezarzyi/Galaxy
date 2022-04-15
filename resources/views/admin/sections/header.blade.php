@@ -7,7 +7,7 @@
           <ul class="nav navbar-nav bookmark-icons">
              <li class="nav-item d-none d-lg-block">
              <li class="nav-item d-none d-lg-block"><a class="nav-link nav-link-style"><i class="ficon" data-feather="sun"></i></a></li>
-             </li>
+             </li> 
           </ul>
        </div>
        <ul class="nav navbar-nav align-items-center ms-auto">
