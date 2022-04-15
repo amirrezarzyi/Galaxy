@@ -76,21 +76,24 @@
                 <div class="row">
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="name">نام کاربری</label>
-                        <input type="text" id="name" name="name" class="form-control" placeholder="علی امیری" />
+                        <input type="text" id="name" name="name" class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}"placeholder="علی امیری" />
+                        <span class="error">@error('name') {{$message}} @enderror</span>
                     </div>
                     <div class="mb-1 col-md-6">
                         <label class="form-label" for="email">ایمیل</label>
-                        <input type="email" id="email" name="email" class="form-control" placeholder="aliamiri@email.com" aria-label="john.doe" />
+                        <input type="email" id="email" name="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}"placeholder="aliamiri@email.com" aria-label="john.doe" />
+                        <span class="error">@error('email') {{$message}} @enderror</span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-1 form-password-toggle col-md-6">
                         <label class="form-label" for="password">رمزعبور</label>
-                        <input type="password" id="password" name="password" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                        <input type="password" id="password" name="password" class="form-control @error('password') is-invalid @enderror" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                        <span class="error">@error('password') {{$message}} @enderror</span>
                     </div>
                     <div class="mb-1 form-password-toggle col-md-6">
                         <label class="form-label" for="password_confirmation">تایید رمزعبور</label>
-                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
+                        <input type="password" id="password_confirmation" name="password_confirmation" class="form-control @error('password') is-invalid @enderror" placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;" />
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
@@ -182,7 +185,7 @@
                         <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                         <span class="align-middle d-sm-inline-block d-none">قبلی</span>
                     </button>
-                    <button type="submit" class="btn btn-success btn-submit">ثبت</button>
+                    <button type="submit" class="btn btn-success">ثبت</button>
                 </div>
             </div>
         </form>
