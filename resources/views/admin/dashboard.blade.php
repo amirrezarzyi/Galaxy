@@ -1,7 +1,6 @@
 @extends('admin.layouts.app')
 
-@section('styles')
-
+@section('styles') 
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="{{ asset('/admin-assets/app-assets/vendors/css/vendors-rtl.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('/admin-assets/app-assets/vendors/css/forms/wizard/bs-stepper.min.css') }}">
@@ -35,12 +34,11 @@
 @section('content')
 <section id="dashboard-ecommerce">
     <div class="row match-height">
-
         <!-- Medal Card -->
         <div class="col-xl-4 col-md-6 col-12">
             <div class="card card-congratulation-medal">
                 <div class="card-body">
-                    <h5> امیررضا رضایی عزیز </h5>
+                    <h5> {{auth()->user()->name}} عزیز </h5>
                     <p class="card-text font-small-3"> خوش آمدید🎉! </p>
 
                     <img src="{{ asset('admin-assets/app-assets/images/illustration/badge.svg') }}" class="congratulation-medal" alt="Medal Pic">
@@ -48,9 +46,7 @@
             </div>
         </div>
         <!--/ Medal Card -->
-
     </div>
-
 </section>
 @endsection
 
