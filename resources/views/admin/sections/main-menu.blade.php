@@ -42,8 +42,8 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-          <li class="nav-item active">
-             <a class="d-flex align-items-center" href="/admin">
+          <li class="nav-item {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
+             <a class="d-flex align-items-center" href="{{ route('admin.dashboard') }}">
              <i data-feather="home"></i>
              <span class="menu-title text-truncate" data-i18n="Dashboards">داشبورد</span>
              </a>
@@ -54,7 +54,7 @@
              <span class="menu-title text-truncate" data-i18n="User">کاربران</span>
              </a>
              <ul class="menu-content">
-                <li>
+                <li class="{{(request()->is('admin/user*')) ? 'active' : ''}}">
                    <a class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
                       <i data-feather='circle'></i>
                       <span class="menu-item text-truncate" data-i18n="List">لیست مدیران</span>
@@ -68,14 +68,14 @@
              <span class="menu-title text-truncate" data-i18n="User">نقش ها وسترسی ها</span>
              </a>
              <ul class="menu-content">
-                <li>
-                   <a class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
+                <li class="{{(request()->is('admin/role*')) ? 'active' : ''}}">
+                   <a class="d-flex align-items-center" href="{{ route('admin.role.index') }}">
                       <i data-feather='circle'></i>
                       <span class="menu-item text-truncate" data-i18n="List">نقش ها</span>
                    </a>
                 </li>
-                <li>
-                   <a class="d-flex align-items-center" href="{{ route('admin.user.index') }}">
+                <li class="{{(request()->is('admin/permission*')) ? 'active' : ''}}">
+                   <a class="d-flex align-items-center" href="{{ route('admin.permission.index') }}">
                       <i data-feather='circle'></i>
                       <span class="menu-item text-truncate" data-i18n="List">دسترسی ها</span>
                    </a>

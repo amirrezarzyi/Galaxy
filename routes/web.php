@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\User\PermissionController;
 use App\Http\Controllers\Admin\User\ProfileController;
+use App\Http\Controllers\Admin\User\RoleController;
 use App\Http\Controllers\Admin\User\UserController;
-use Illuminate\Support\Facades\Route; 
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +39,23 @@ Route::prefix('/admin')->middleware(['auth', 'verified'])->group(function () {
         //profile
         Route::prefix('/profile')->group(function () {
             Route::get('/', [ProfileController::class, 'index'])->name('admin.user.profile');
-            Route::delete('/session/{session:user_id}', [ProfileController::class, 'destroy'])->name('admin.user.profile.session.destroy');
+            Route::delete('/session/{session:payload}', [ProfileController::class, 'destroy'])->name('admin.user.profile.session.destroy');
         });
 
+    });
+
+    //role
+    Route::prefix('role')->group(function () {
+        Route::get('/', [RoleController::class, 'index'])->name('admin.role.index');
+        Route::post('/store', [UserController::class, 'store'])->name('admin.role.store');
+        Route::delete('/destroy/{role}', [UserController::class, 'destroy'])->name('admin.role.destroy');
+    });
+
+    //permission
+    Route::prefix('permission')->group(function () {
+        Route::get('/', [PermissionController::class, 'index'])->name('admin.permission.index');
+        Route::post('/store', [PermissionController::class, 'store'])->name('admin.permission.store');
+        Route::delete('/destroy/{permission}', [PermissionController::class, 'destroy'])->name('admin.permission.destroy');
     });
 
 });

@@ -272,11 +272,11 @@
                             @endif
                               </h4>
                             @unless($session->id === request()->session()->getId())
-                                 <form action="{{ route('admin.user.profile.session.destroy' ,$session->user_id) }}" method="POST">
+                                <form action="{{ route('admin.user.profile.session.destroy' , $session->payload) }}" method="POST">
                             @csrf
                             @method('DELETE')
                                  <button type="submit" class="btn btn-outline-danger">خارج شدن</button>
-                              </form>
+                                </form>
                             @endunless
                            </div>
                            <h6 class="d-flex align-items-center fw-bolder">

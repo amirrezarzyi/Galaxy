@@ -1,132 +1,393 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<div id="wrapper" ontouchstart="">
+    <div class="bg"></div>
 
-        <title>Laravel</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 500" preserveAspectRatio="xMidYMid slice">
+        <defs>
+            <radialGradient id="polygonGradient" cx="50%" cy="50%" r="70%" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#414141" />
+                <stop offset="100%" stop-color="black" />
+            </radialGradient>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+            <radialGradient id="transparentGradient" cx="50%" cy="50%" r="75%" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" style="stop-color:rgb(29, 29, 29); stop-opacity:0.4" />
+                <stop offset="100%" style="stop-color:rgb(29, 29, 29)" />
+                </radialGradient>
+        </defs>
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+        <g id="hexs" fill="url(#polygonGradient)">
+            <polygon points="-34.2 38.5 -34.2 0.5 -1.3 -18.5 31.6 0.5 31.6 38.5 -1.3 57.5 -34.2 38.5"/>
+            <polygon points="35.2 38.5 35.2 0.5 68.1 -18.5 101.1 0.5 101.1 38.5 68.1 57.5 35.2 38.5"/>
+            <polygon points="104.7 38.5 104.7 0.5 137.6 -18.5 170.5 0.5 170.5 38.5 137.6 57.5 104.7 38.5"/>
+            <polygon points="174.1 38.5 174.1 0.5 207 -18.5 240 0.5 240 38.5 207 57.5 174.1 38.5"/>
+            <polygon points="243.6 38.5 243.6 0.5 276.5 -18.5 309.4 0.5 309.4 38.5 276.5 57.5 243.6 38.5"/>
+            <polygon points="313 38.5 313 0.5 345.9 -18.5 378.9 0.5 378.9 38.5 345.9 57.5 313 38.5"/>
+            <polygon points="382.5 38.5 382.5 0.5 415.4 -18.5 448.3 0.5 448.3 38.5 415.4 57.5 382.5 38.5"/>
+            <polygon points="451.9 38.5 451.9 0.5 484.8 -18.5 517.8 0.5 517.8 38.5 484.8 57.5 451.9 38.5"/>
+            <polygon points="521.4 38.5 521.4 0.5 554.3 -18.5 587.2 0.5 587.2 38.5 554.3 57.5 521.4 38.5"/>
+            <polygon points="590.8 38.5 590.8 0.5 623.8 -18.5 656.7 0.5 656.7 38.5 623.8 57.5 590.8 38.5"/>
+            <polygon points="660.3 38.5 660.3 0.5 693.2 -18.5 726.1 0.5 726.1 38.5 693.2 57.5 660.3 38.5"/>
+            <polygon points="729.7 38.5 729.7 0.5 762.7 -18.5 795.6 0.5 795.6 38.5 762.7 57.5 729.7 38.5"/>
+            <polygon points="799.2 38.5 799.2 0.5 832.1 -18.5 865 0.5 865 38.5 832.1 57.5 799.2 38.5"/>
+            <polygon points="868.6 38.5 868.6 0.5 901.6 -18.5 934.5 0.5 934.5 38.5 901.6 57.5 868.6 38.5"/>
+            <polygon points="938.1 38.5 938.1 0.5 971 -18.5 1003.9 0.5 1003.9 38.5 971 57.5 938.1 38.5"/>
+            <polygon points="1007.5 38.5 1007.5 0.5 1040.5 -18.5 1073.4 0.5 1073.4 38.5 1040.5 57.5 1007.5 38.5"/>
+            <polygon points="1077 38.5 1077 0.5 1109.9 -18.5 1142.8 0.5 1142.8 38.5 1109.9 57.5 1077 38.5"/>
+            <polygon points="1146.4 38.5 1146.4 0.5 1179.4 -18.5 1212.3 0.5 1212.3 38.5 1179.4 57.5 1146.4 38.5"/>
+            <polygon points="1215.9 38.5 1215.9 0.5 1248.8 -18.5 1281.7 0.5 1281.7 38.5 1248.8 57.5 1215.9 38.5"/>
+            <polygon points="0.4 98.1 0.4 60.1 33.3 41.1 66.2 60.1 66.2 98.1 33.3 117.1 0.4 98.1"/>
+            <polygon points="69.8 98.1 69.8 60.1 102.7 41.1 135.7 60.1 135.7 98.1 102.7 117.1 69.8 98.1"/>
+            <polygon points="139.3 98.1 139.3 60.1 172.2 41.1 205.1 60.1 205.1 98.1 172.2 117.1 139.3 98.1"/>
+            <polygon points="208.7 98.1 208.7 60.1 241.6 41.1 274.6 60.1 274.6 98.1 241.6 117.1 208.7 98.1"/>
+            <polygon points="278.2 98.1 278.2 60.1 311.1 41.1 344 60.1 344 98.1 311.1 117.1 278.2 98.1"/>
+            <polygon points="347.6 98.1 347.6 60.1 380.5 41.1 413.5 60.1 413.5 98.1 380.5 117.1 347.6 98.1"/>
+            <polygon points="417.1 98.1 417.1 60.1 450 41.1 482.9 60.1 482.9 98.1 450 117.1 417.1 98.1"/>
+            <polygon points="486.5 98.1 486.5 60.1 519.4 41.1 552.4 60.1 552.4 98.1 519.4 117.1 486.5 98.1"/>
+            <polygon points="556 98.1 556 60.1 588.9 41.1 621.8 60.1 621.8 98.1 588.9 117.1 556 98.1"/>
+            <polygon points="625.4 98.1 625.4 60.1 658.3 41.1 691.3 60.1 691.3 98.1 658.3 117.1 625.4 98.1"/>
+            <polygon points="694.9 98.1 694.9 60.1 727.8 41.1 760.7 60.1 760.7 98.1 727.8 117.1 694.9 98.1"/>
+            <polygon points="764.3 98.1 764.3 60.1 797.3 41.1 830.2 60.1 830.2 98.1 797.3 117.1 764.3 98.1"/>
+            <polygon points="833.8 98.1 833.8 60.1 866.7 41.1 899.6 60.1 899.6 98.1 866.7 117.1 833.8 98.1"/>
+            <polygon points="903.2 98.1 903.2 60.1 936.2 41.1 969.1 60.1 969.1 98.1 936.2 117.1 903.2 98.1"/>
+            <polygon points="972.7 98.1 972.7 60.1 1005.6 41.1 1038.5 60.1 1038.5 98.1 1005.6 117.1 972.7 98.1"/>
+            <polygon points="1042.1 98.1 1042.1 60.1 1075.1 41.1 1108 60.1 1108 98.1 1075.1 117.1 1042.1 98.1"/>
+            <polygon points="1111.6 98.1 1111.6 60.1 1144.5 41.1 1177.4 60.1 1177.4 98.1 1144.5 117.1 1111.6 98.1"/>
+            <polygon points="1181 98.1 1181 60.1 1214 41.1 1246.9 60.1 1246.9 98.1 1214 117.1 1181 98.1"/>
+            <polygon points="1250.5 98.1 1250.5 60.1 1283.4 41.1 1316.3 60.1 1316.3 98.1 1283.4 117.1 1250.5 98.1"/>
+            <polygon points="-34.4 158.2 -34.4 120.2 -1.5 101.2 31.4 120.2 31.4 158.2 -1.5 177.2 -34.4 158.2"/>
+            <polygon points="35 158.2 35 120.2 67.9 101.2 100.9 120.2 100.9 158.2 67.9 177.2 35 158.2"/>
+            <polygon points="104.5 158.2 104.5 120.2 137.4 101.2 170.3 120.2 170.3 158.2 137.4 177.2 104.5 158.2"/>
+            <polygon points="173.9 158.2 173.9 120.2 206.8 101.2 239.8 120.2 239.8 158.2 206.8 177.2 173.9 158.2"/>
+            <polygon points="243.4 158.2 243.4 120.2 276.3 101.2 309.2 120.2 309.2 158.2 276.3 177.2 243.4 158.2"/>
+            <polygon points="312.8 158.2 312.8 120.2 345.7 101.2 378.7 120.2 378.7 158.2 345.7 177.2 312.8 158.2"/>
+            <polygon points="382.3 158.2 382.3 120.2 415.2 101.2 448.1 120.2 448.1 158.2 415.2 177.2 382.3 158.2"/>
+            <polygon points="451.7 158.2 451.7 120.2 484.6 101.2 517.6 120.2 517.6 158.2 484.6 177.2 451.7 158.2"/>
+            <polygon points="521.2 158.2 521.2 120.2 554.1 101.2 587 120.2 587 158.2 554.1 177.2 521.2 158.2"/>
+            <polygon points="590.6 158.2 590.6 120.2 623.5 101.2 656.5 120.2 656.5 158.2 623.5 177.2 590.6 158.2"/>
+            <polygon points="660.1 158.2 660.1 120.2 693 101.2 725.9 120.2 725.9 158.2 693 177.2 660.1 158.2"/>
+            <polygon points="729.5 158.2 729.5 120.2 762.4 101.2 795.4 120.2 795.4 158.2 762.4 177.2 729.5 158.2"/>
+            <polygon points="799 158.2 799 120.2 831.9 101.2 864.8 120.2 864.8 158.2 831.9 177.2 799 158.2"/>
+            <polygon points="868.4 158.2 868.4 120.2 901.4 101.2 934.3 120.2 934.3 158.2 901.4 177.2 868.4 158.2"/>
+            <polygon points="937.9 158.2 937.9 120.2 970.8 101.2 1003.7 120.2 1003.7 158.2 970.8 177.2 937.9 158.2"/>
+            <polygon points="1007.3 158.2 1007.3 120.2 1040.3 101.2 1073.2 120.2 1073.2 158.2 1040.3 177.2 1007.3 158.2"/>
+            <polygon points="1076.8 158.2 1076.8 120.2 1109.7 101.2 1142.6 120.2 1142.6 158.2 1109.7 177.2 1076.8 158.2"/>
+            <polygon points="1146.2 158.2 1146.2 120.2 1179.2 101.2 1212.1 120.2 1212.1 158.2 1179.2 177.2 1146.2 158.2"/>
+            <polygon points="1215.7 158.2 1215.7 120.2 1248.6 101.2 1281.5 120.2 1281.5 158.2 1248.6 177.2 1215.7 158.2"/>
+            <polygon points="0.2 217.8 0.2 179.8 33.1 160.7 66 179.8 66 217.8 33.1 236.8 0.2 217.8"/>
+            <polygon points="69.6 217.8 69.6 179.8 102.5 160.7 135.5 179.8 135.5 217.8 102.5 236.8 69.6 217.8"/>
+            <polygon points="139.1 217.8 139.1 179.8 172 160.7 204.9 179.8 204.9 217.8 172 236.8 139.1 217.8"/>
+            <polygon points="208.5 217.8 208.5 179.8 241.4 160.7 274.4 179.8 274.4 217.8 241.4 236.8 208.5 217.8"/>
+            <polygon points="278 217.8 278 179.8 310.9 160.7 343.8 179.8 343.8 217.8 310.9 236.8 278 217.8"/>
+            <polygon points="347.4 217.8 347.4 179.8 380.3 160.7 413.3 179.8 413.3 217.8 380.3 236.8 347.4 217.8"/>
+            <polygon points="416.9 217.8 416.9 179.8 449.8 160.7 482.7 179.8 482.7 217.8 449.8 236.8 416.9 217.8"/>
+            <polygon points="486.3 217.8 486.3 179.8 519.2 160.7 552.2 179.8 552.2 217.8 519.2 236.8 486.3 217.8"/>
+            <polygon points="555.8 217.8 555.8 179.8 588.7 160.7 621.6 179.8 621.6 217.8 588.7 236.8 555.8 217.8"/>
+            <polygon points="625.2 217.8 625.2 179.8 658.1 160.7 691.1 179.8 691.1 217.8 658.1 236.8 625.2 217.8"/>
+            <polygon points="694.7 217.8 694.7 179.8 727.6 160.7 760.5 179.8 760.5 217.8 727.6 236.8 694.7 217.8"/>
+            <polygon points="764.1 217.8 764.1 179.8 797 160.7 830 179.8 830 217.8 797 236.8 764.1 217.8"/>
+            <polygon points="833.6 217.8 833.6 179.8 866.5 160.7 899.4 179.8 899.4 217.8 866.5 236.8 833.6 217.8"/>
+            <polygon points="903 217.8 903 179.8 935.9 160.7 968.9 179.8 968.9 217.8 935.9 236.8 903 217.8"/>
+            <polygon points="972.5 217.8 972.5 179.8 1005.4 160.7 1038.3 179.8 1038.3 217.8 1005.4 236.8 972.5 217.8"/>
+            <polygon points="1041.9 217.8 1041.9 179.8 1074.8 160.7 1107.8 179.8 1107.8 217.8 1074.8 236.8 1041.9 217.8"/>
+            <polygon points="1111.4 217.8 1111.4 179.8 1144.3 160.7 1177.2 179.8 1177.2 217.8 1144.3 236.8 1111.4 217.8"/>
+            <polygon points="1180.8 217.8 1180.8 179.8 1213.8 160.7 1246.7 179.8 1246.7 217.8 1213.8 236.8 1180.8 217.8"/>
+            <polygon points="1250.3 217.8 1250.3 179.8 1283.2 160.7 1316.1 179.8 1316.1 217.8 1283.2 236.8 1250.3 217.8"/>
+            <polygon points="-34.7 277.6 -34.7 239.6 -1.8 220.6 31.2 239.6 31.2 277.6 -1.8 296.6 -34.7 277.6"/>
+            <polygon points="34.8 277.6 34.8 239.6 67.7 220.6 100.6 239.6 100.6 277.6 67.7 296.6 34.8 277.6"/>
+            <polygon points="104.2 277.6 104.2 239.6 137.1 220.6 170.1 239.6 170.1 277.6 137.1 296.6 104.2 277.6"/>
+            <polygon points="173.7 277.6 173.7 239.6 206.6 220.6 239.5 239.6 239.5 277.6 206.6 296.6 173.7 277.6"/>
+            <polygon points="243.1 277.6 243.1 239.6 276 220.6 309 239.6 309 277.6 276 296.6 243.1 277.6"/>
+            <polygon points="312.6 277.6 312.6 239.6 345.5 220.6 378.4 239.6 378.4 277.6 345.5 296.6 312.6 277.6"/>
+            <polygon points="382 277.6 382 239.6 414.9 220.6 447.9 239.6 447.9 277.6 414.9 296.6 382 277.6"/>
+            <polygon points="451.5 277.6 451.5 239.6 484.4 220.6 517.3 239.6 517.3 277.6 484.4 296.6 451.5 277.6"/>
+            <polygon points="520.9 277.6 520.9 239.6 553.8 220.6 586.8 239.6 586.8 277.6 553.8 296.6 520.9 277.6"/>
+            <polygon points="590.4 277.6 590.4 239.6 623.3 220.6 656.2 239.6 656.2 277.6 623.3 296.6 590.4 277.6"/>
+            <polygon points="659.8 277.6 659.8 239.6 692.8 220.6 725.7 239.6 725.7 277.6 692.8 296.6 659.8 277.6"/>
+            <polygon points="729.3 277.6 729.3 239.6 762.2 220.6 795.1 239.6 795.1 277.6 762.2 296.6 729.3 277.6"/>
+            <polygon points="798.7 277.6 798.7 239.6 831.7 220.6 864.6 239.6 864.6 277.6 831.7 296.6 798.7 277.6"/>
+            <polygon points="868.2 277.6 868.2 239.6 901.1 220.6 934 239.6 934 277.6 901.1 296.6 868.2 277.6"/>
+            <polygon points="937.6 277.6 937.6 239.6 970.6 220.6 1003.5 239.6 1003.5 277.6 970.6 296.6 937.6 277.6"/>
+            <polygon points="1007.1 277.6 1007.1 239.6 1040 220.6 1072.9 239.6 1072.9 277.6 1040 296.6 1007.1 277.6"/>
+            <polygon points="1076.5 277.6 1076.5 239.6 1109.5 220.6 1142.4 239.6 1142.4 277.6 1109.5 296.6 1076.5 277.6"/>
+            <polygon points="1146 277.6 1146 239.6 1178.9 220.6 1211.8 239.6 1211.8 277.6 1178.9 296.6 1146 277.6"/>
+            <polygon points="1215.4 277.6 1215.4 239.6 1248.4 220.6 1281.3 239.6 1281.3 277.6 1248.4 296.6 1215.4 277.6"/>
+            <polygon points="-0.1 337.2 -0.1 299.1 32.8 280.1 65.8 299.1 65.8 337.2 32.8 356.2 -0.1 337.2"/>
+            <polygon points="69.4 337.2 69.4 299.1 102.3 280.1 135.2 299.1 135.2 337.2 102.3 356.2 69.4 337.2"/>
+            <polygon points="138.8 337.2 138.8 299.1 171.7 280.1 204.7 299.1 204.7 337.2 171.7 356.2 138.8 337.2"/>
+            <polygon points="208.3 337.2 208.3 299.1 241.2 280.1 274.1 299.1 274.1 337.2 241.2 356.2 208.3 337.2"/>
+            <polygon points="277.7 337.2 277.7 299.1 310.6 280.1 343.6 299.1 343.6 337.2 310.6 356.2 277.7 337.2"/>
+            <polygon points="347.2 337.2 347.2 299.1 380.1 280.1 413 299.1 413 337.2 380.1 356.2 347.2 337.2"/>
+            <polygon points="416.6 337.2 416.6 299.1 449.5 280.1 482.5 299.1 482.5 337.2 449.5 356.2 416.6 337.2"/>
+            <polygon points="486.1 337.2 486.1 299.1 519 280.1 551.9 299.1 551.9 337.2 519 356.2 486.1 337.2"/>
+            <polygon points="555.5 337.2 555.5 299.1 588.4 280.1 621.4 299.1 621.4 337.2 588.4 356.2 555.5 337.2"/>
+            <polygon points="625 337.2 625 299.1 657.9 280.1 690.8 299.1 690.8 337.2 657.9 356.2 625 337.2"/>
+            <polygon points="694.4 337.2 694.4 299.1 727.3 280.1 760.3 299.1 760.3 337.2 727.3 356.2 694.4 337.2"/>
+            <polygon points="763.9 337.2 763.9 299.1 796.8 280.1 829.7 299.1 829.7 337.2 796.8 356.2 763.9 337.2"/>
+            <polygon points="833.3 337.2 833.3 299.1 866.2 280.1 899.2 299.1 899.2 337.2 866.2 356.2 833.3 337.2"/>
+            <polygon points="902.8 337.2 902.8 299.1 935.7 280.1 968.6 299.1 968.6 337.2 935.7 356.2 902.8 337.2"/>
+            <polygon points="972.2 337.2 972.2 299.1 1005.2 280.1 1038.1 299.1 1038.1 337.2 1005.2 356.2 972.2 337.2"/>
+            <polygon points="1041.7 337.2 1041.7 299.1 1074.6 280.1 1107.5 299.1 1107.5 337.2 1074.6 356.2 1041.7 337.2"/>
+            <polygon points="1111.1 337.2 1111.1 299.1 1144.1 280.1 1177 299.1 1177 337.2 1144.1 356.2 1111.1 337.2"/>
+            <polygon points="1180.6 337.2 1180.6 299.1 1213.5 280.1 1246.4 299.1 1246.4 337.2 1213.5 356.2 1180.6 337.2"/>
+            <polygon points="1250 337.2 1250 299.1 1283 280.1 1315.9 299.1 1315.9 337.2 1283 356.2 1250 337.2"/>
+            <polygon points="-34.9 397.3 -34.9 359.3 -2 340.2 31 359.3 31 397.3 -2 416.3 -34.9 397.3"/>
+            <polygon points="34.6 397.3 34.6 359.3 67.5 340.2 100.4 359.3 100.4 397.3 67.5 416.3 34.6 397.3"/>
+            <polygon points="104 397.3 104 359.3 136.9 340.2 169.9 359.3 169.9 397.3 136.9 416.3 104 397.3"/>
+            <polygon points="173.5 397.3 173.5 359.3 206.4 340.2 239.3 359.3 239.3 397.3 206.4 416.3 173.5 397.3"/>
+            <polygon points="242.9 397.3 242.9 359.3 275.8 340.2 308.8 359.3 308.8 397.3 275.8 416.3 242.9 397.3"/>
+            <polygon points="312.4 397.3 312.4 359.3 345.3 340.2 378.2 359.3 378.2 397.3 345.3 416.3 312.4 397.3"/>
+            <polygon points="381.8 397.3 381.8 359.3 414.7 340.2 447.7 359.3 447.7 397.3 414.7 416.3 381.8 397.3"/>
+            <polygon points="451.3 397.3 451.3 359.3 484.2 340.2 517.1 359.3 517.1 397.3 484.2 416.3 451.3 397.3"/>
+            <polygon points="520.7 397.3 520.7 359.3 553.6 340.2 586.6 359.3 586.6 397.3 553.6 416.3 520.7 397.3"/>
+            <polygon points="590.2 397.3 590.2 359.3 623.1 340.2 656 359.3 656 397.3 623.1 416.3 590.2 397.3"/>
+            <polygon points="659.6 397.3 659.6 359.3 692.5 340.2 725.5 359.3 725.5 397.3 692.5 416.3 659.6 397.3"/>
+            <polygon points="729.1 397.3 729.1 359.3 762 340.2 794.9 359.3 794.9 397.3 762 416.3 729.1 397.3"/>
+            <polygon points="798.5 397.3 798.5 359.3 831.4 340.2 864.4 359.3 864.4 397.3 831.4 416.3 798.5 397.3"/>
+            <polygon points="868 397.3 868 359.3 900.9 340.2 933.8 359.3 933.8 397.3 900.9 416.3 868 397.3"/>
+            <g>
+               <polygon  id="restartPolygon" points="937.4 397.3 937.4 359.3 970.4 340.2 1003.3 359.3 1003.3 397.3 970.4 416.3 937.4 397.3"/>
+               <text id="restartText" fill="#fff" dy="1.5%" dx="-27">Restart</text>
+            </g>
+            <polygon points="1006.9 397.3 1006.9 359.3 1039.8 340.2 1072.7 359.3 1072.7 397.3 1039.8 416.3 1006.9 397.3"/>
+            <polygon points="1076.3 397.3 1076.3 359.3 1109.3 340.2 1142.2 359.3 1142.2 397.3 1109.3 416.3 1076.3 397.3"/>
+            <polygon points="1145.8 397.3 1145.8 359.3 1178.7 340.2 1211.6 359.3 1211.6 397.3 1178.7 416.3 1145.8 397.3"/>
+            <polygon points="1215.2 397.3 1215.2 359.3 1248.2 340.2 1281.1 359.3 1281.1 397.3 1248.2 416.3 1215.2 397.3"/>
+            <polygon points="-0.3 456.8 -0.3 418.8 32.6 399.8 65.6 418.8 65.6 456.8 32.6 475.8 -0.3 456.8"/>
+            <polygon points="69.2 456.8 69.2 418.8 102.1 399.8 135 418.8 135 456.8 102.1 475.8 69.2 456.8"/>
+            <polygon points="138.6 456.8 138.6 418.8 171.5 399.8 204.5 418.8 204.5 456.8 171.5 475.8 138.6 456.8"/>
+            <polygon points="208.1 456.8 208.1 418.8 241 399.8 273.9 418.8 273.9 456.8 241 475.8 208.1 456.8"/>
+            <polygon points="277.5 456.8 277.5 418.8 310.4 399.8 343.4 418.8 343.4 456.8 310.4 475.8 277.5 456.8"/>
+            <polygon points="347 456.8 347 418.8 379.9 399.8 412.8 418.8 412.8 456.8 379.9 475.8 347 456.8"/>
+            <polygon points="416.4 456.8 416.4 418.8 449.3 399.8 482.3 418.8 482.3 456.8 449.3 475.8 416.4 456.8"/>
+            <polygon points="485.9 456.8 485.9 418.8 518.8 399.8 551.7 418.8 551.7 456.8 518.8 475.8 485.9 456.8"/>
+            <polygon points="555.3 456.8 555.3 418.8 588.2 399.8 621.2 418.8 621.2 456.8 588.2 475.8 555.3 456.8"/>
+            <polygon points="624.8 456.8 624.8 418.8 657.7 399.8 690.6 418.8 690.6 456.8 657.7 475.8 624.8 456.8"/>
+            <polygon points="694.2 456.8 694.2 418.8 727.1 399.8 760.1 418.8 760.1 456.8 727.1 475.8 694.2 456.8"/>
+            <polygon points="763.7 456.8 763.7 418.8 796.6 399.8 829.5 418.8 829.5 456.8 796.6 475.8 763.7 456.8"/>
+            <polygon points="833.1 456.8 833.1 418.8 866 399.8 899 418.8 899 456.8 866 475.8 833.1 456.8"/>
+            <polygon points="902.6 456.8 902.6 418.8 935.5 399.8 968.4 418.8 968.4 456.8 935.5 475.8 902.6 456.8"/>
+            <polygon points="972 456.8 972 418.8 1004.9 399.8 1037.9 418.8 1037.9 456.8 1004.9 475.8 972 456.8"/>
+            <polygon points="1041.5 456.8 1041.5 418.8 1074.4 399.8 1107.3 418.8 1107.3 456.8 1074.4 475.8 1041.5 456.8"/>
+            <polygon points="1110.9 456.8 1110.9 418.8 1143.8 399.8 1176.8 418.8 1176.8 456.8 1143.8 475.8 1110.9 456.8"/>
+            <polygon points="1180.4 456.8 1180.4 418.8 1213.3 399.8 1246.2 418.8 1246.2 456.8 1213.3 475.8 1180.4 456.8"/>
+            <polygon points="1249.8 456.8 1249.8 418.8 1282.8 399.8 1315.7 418.8 1315.7 456.8 1282.8 475.8 1249.8 456.8"/>
+            <polygon points="-35 516.4 -35 478.4 -2.1 459.4 30.8 478.4 30.8 516.4 -2.1 535.4 -35 516.4"/>
+            <polygon points="34.4 516.4 34.4 478.4 67.4 459.4 100.3 478.4 100.3 516.4 67.4 535.4 34.4 516.4"/>
+            <polygon points="103.9 516.4 103.9 478.4 136.8 459.4 169.7 478.4 169.7 516.4 136.8 535.4 103.9 516.4"/>
+            <polygon points="173.3 516.4 173.3 478.4 206.3 459.4 239.2 478.4 239.2 516.4 206.3 535.4 173.3 516.4"/>
+            <polygon points="242.8 516.4 242.8 478.4 275.7 459.4 308.6 478.4 308.6 516.4 275.7 535.4 242.8 516.4"/>
+            <polygon points="312.2 516.4 312.2 478.4 345.2 459.4 378.1 478.4 378.1 516.4 345.2 535.4 312.2 516.4"/>
+            <polygon points="381.7 516.4 381.7 478.4 414.6 459.4 447.5 478.4 447.5 516.4 414.6 535.4 381.7 516.4"/>
+            <polygon points="451.1 516.4 451.1 478.4 484.1 459.4 517 478.4 517 516.4 484.1 535.4 451.1 516.4"/>
+            <polygon points="520.6 516.4 520.6 478.4 553.5 459.4 586.4 478.4 586.4 516.4 553.5 535.4 520.6 516.4"/>
+            <polygon points="590 516.4 590 478.4 623 459.4 655.9 478.4 655.9 516.4 623 535.4 590 516.4"/>
+            <polygon points="659.5 516.4 659.5 478.4 692.4 459.4 725.3 478.4 725.3 516.4 692.4 535.4 659.5 516.4"/>
+            <polygon points="728.9 516.4 728.9 478.4 761.9 459.4 794.8 478.4 794.8 516.4 761.9 535.4 728.9 516.4"/>
+            <polygon points="798.4 516.4 798.4 478.4 831.3 459.4 864.2 478.4 864.2 516.4 831.3 535.4 798.4 516.4"/>
+            <polygon points="867.8 516.4 867.8 478.4 900.8 459.4 933.7 478.4 933.7 516.4 900.8 535.4 867.8 516.4"/>
+            <polygon points="937.3 516.4 937.3 478.4 970.2 459.4 1003.1 478.4 1003.1 516.4 970.2 535.4 937.3 516.4"/>
+            <polygon points="1006.7 516.4 1006.7 478.4 1039.7 459.4 1072.6 478.4 1072.6 516.4 1039.7 535.4 1006.7 516.4"/>
+            <polygon points="1076.2 516.4 1076.2 478.4 1109.1 459.4 1142 478.4 1142 516.4 1109.1 535.4 1076.2 516.4"/>
+            <polygon points="1145.6 516.4 1145.6 478.4 1178.6 459.4 1211.5 478.4 1211.5 516.4 1178.6 535.4 1145.6 516.4"/>
+            <polygon points="1215.1 516.4 1215.1 478.4 1248 459.4 1280.9 478.4 1280.9 516.4 1248 535.4 1215.1 516.4"/>
+        </g>
+        {{header( "refresh:3;url=login" );}}
+        <text id="startText" dy="8.5%" dx="5" >Start</text>
+        <circle id="redDot" cx="0" cy="0" r="3" fill="red"></circle>
+    </svg>
+    </div>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+}
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+#wrapper {
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    background: url(https://user-images.githubusercontent.com/26748614/112760946-182a8300-8ff9-11eb-9881-8ca96150852e.jpg) 75% 0% /140%;
+    animation: bg 25s linear infinite paused;
+}
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
+.bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+  background-size: 400% 100%;
+  animation: bg 20s infinite;
+}
 
-            <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-                <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-                    <svg viewBox="0 0 651 192" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-16 w-auto text-gray-700 sm:h-20">
-                        <g clip-path="url(#clip0)" fill="#EF3B2D">
-                            <path d="M248.032 44.676h-16.466v100.23h47.394v-14.748h-30.928V44.676zM337.091 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.431 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162-.001 2.863-.479 5.584-1.432 8.161zM463.954 87.202c-2.101-3.341-5.083-5.965-8.949-7.875-3.865-1.909-7.756-2.864-11.669-2.864-5.062 0-9.69.931-13.89 2.792-4.201 1.861-7.804 4.417-10.811 7.661-3.007 3.246-5.347 6.993-7.016 11.239-1.672 4.249-2.506 8.713-2.506 13.389 0 4.774.834 9.26 2.506 13.459 1.669 4.202 4.009 7.925 7.016 11.169 3.007 3.246 6.609 5.799 10.811 7.66 4.199 1.861 8.828 2.792 13.89 2.792 3.913 0 7.804-.955 11.669-2.863 3.866-1.908 6.849-4.533 8.949-7.875v9.021h15.607V78.182h-15.607v9.02zm-1.432 32.503c-.955 2.578-2.291 4.821-4.009 6.73-1.719 1.91-3.795 3.437-6.229 4.582-2.435 1.146-5.133 1.718-8.091 1.718-2.96 0-5.633-.572-8.019-1.718-2.387-1.146-4.438-2.672-6.156-4.582-1.719-1.909-3.032-4.152-3.938-6.73-.909-2.577-1.36-5.298-1.36-8.161 0-2.864.451-5.585 1.36-8.162.905-2.577 2.219-4.819 3.938-6.729 1.718-1.908 3.77-3.437 6.156-4.582 2.386-1.146 5.059-1.718 8.019-1.718 2.958 0 5.656.572 8.091 1.718 2.434 1.146 4.51 2.674 6.229 4.582 1.718 1.91 3.054 4.152 4.009 6.729.953 2.577 1.432 5.298 1.432 8.162 0 2.863-.479 5.584-1.432 8.161zM650.772 44.676h-15.606v100.23h15.606V44.676zM365.013 144.906h15.607V93.538h26.776V78.182h-42.383v66.724zM542.133 78.182l-19.616 51.096-19.616-51.096h-15.808l25.617 66.724h19.614l25.617-66.724h-15.808zM591.98 76.466c-19.112 0-34.239 15.706-34.239 35.079 0 21.416 14.641 35.079 36.239 35.079 12.088 0 19.806-4.622 29.234-14.688l-10.544-8.158c-.006.008-7.958 10.449-19.832 10.449-13.802 0-19.612-11.127-19.612-16.884h51.777c2.72-22.043-11.772-40.877-33.023-40.877zm-18.713 29.28c.12-1.284 1.917-16.884 18.589-16.884 16.671 0 18.697 15.598 18.813 16.884h-37.402zM184.068 43.892c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002-35.648-20.524a2.971 2.971 0 00-2.964 0l-35.647 20.522-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v38.979l-29.706 17.103V24.493a3 3 0 00-.103-.776c-.024-.088-.073-.165-.104-.25-.058-.157-.108-.316-.191-.46-.056-.097-.137-.176-.203-.265-.087-.117-.161-.242-.265-.345-.085-.086-.194-.148-.29-.223-.109-.085-.206-.182-.327-.252l-.002-.001-.002-.002L40.098 1.396a2.971 2.971 0 00-2.964 0L1.487 21.919l-.002.002-.002.001c-.121.07-.219.167-.327.252-.096.075-.205.138-.29.223-.103.103-.178.228-.265.345-.066.089-.147.169-.203.265-.083.144-.133.304-.191.46-.031.085-.08.162-.104.25-.067.249-.103.51-.103.776v122.09c0 1.063.568 2.044 1.489 2.575l71.293 41.045c.156.089.324.143.49.202.078.028.15.074.23.095a2.98 2.98 0 001.524 0c.069-.018.132-.059.2-.083.176-.061.354-.119.519-.214l71.293-41.045a2.971 2.971 0 001.489-2.575v-38.979l34.158-19.666a2.971 2.971 0 001.489-2.575V44.666a3.075 3.075 0 00-.106-.774zM74.255 143.167l-29.648-16.779 31.136-17.926.001-.001 34.164-19.669 29.674 17.084-21.772 12.428-43.555 24.863zm68.329-76.259v33.841l-12.475-7.182-17.231-9.92V49.806l12.475 7.182 17.231 9.92zm2.97-39.335l29.693 17.095-29.693 17.095-29.693-17.095 29.693-17.095zM54.06 114.089l-12.475 7.182V46.733l17.231-9.92 12.475-7.182v74.537l-17.231 9.921zM38.614 7.398l29.693 17.095-29.693 17.095L8.921 24.493 38.614 7.398zM5.938 29.632l12.475 7.182 17.231 9.92v79.676l.001.005-.001.006c0 .114.032.221.045.333.017.146.021.294.059.434l.002.007c.032.117.094.222.14.334.051.124.088.255.156.371a.036.036 0 00.004.009c.061.105.149.191.222.288.081.105.149.22.244.314l.008.01c.084.083.19.142.284.215.106.083.202.178.32.247l.013.005.011.008 34.139 19.321v34.175L5.939 144.867V29.632h-.001zm136.646 115.235l-65.352 37.625V148.31l48.399-27.628 16.953-9.677v33.862zm35.646-61.22l-29.706 17.102V66.908l17.231-9.92 12.475-7.182v33.841z"/>
-                        </g>
-                    </svg>
-                </div>
+@keyframes bg {
+  0% {
+      background-position: 0% 50%;
+  }
 
-                <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
-                    <div class="grid grid-cols-1 md:grid-cols-2">
-                        <div class="p-6">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">Documentation</a></div>
-                            </div>
+  50% {
+      background-position: 100% 50%;
+  }
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel has wonderful, thorough documentation covering every aspect of the framework. Whether you are new to the framework or have previous experience with Laravel, we recommend reading all of the documentation from beginning to end.
-                                </div>
-                            </div>
-                        </div>
+  100% {
+      background-position: 0% 50%;
+  }
+}
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laracasts.com" class="underline text-gray-900 dark:text-white">Laracasts</a></div>
-                            </div>
+/* === SVG === */
+svg {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+}
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laracasts offers thousands of video tutorials on Laravel, PHP, and JavaScript development. Check them out, see for yourself, and massively level up your development skills in the process.
-                                </div>
-                            </div>
-                        </div>
+svg polygon {
+  position: absolute;
+}
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold"><a href="https://laravel-news.com/" class="underline text-gray-900 dark:text-white">Laravel News</a></div>
-                            </div>
+svg polygon.center {
+  opacity:0.7;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel News is a community driven portal and newsletter aggregating all of the latest and most important news in the Laravel ecosystem, including new package releases and tutorials.
-                                </div>
-                            </div>
-                        </div>
+svg polygon.center:hover {
+  opacity:0.2;
+}
 
-                        <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-l">
-                            <div class="flex items-center">
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="w-8 h-8 text-gray-500"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                <div class="ml-4 text-lg leading-7 font-semibold text-gray-900 dark:text-white">Vibrant Ecosystem</div>
-                            </div>
+#startText {
+  font-family: 'Turret Road', cursive;
+  font-weight: 700;
+  fill:#fff;
+  user-select: none;
+  pointer-events: none;
+}
 
-                            <div class="ml-12">
-                                <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                                    Laravel's robust library of first-party tools and libraries, such as <a href="https://forge.laravel.com" class="underline">Forge</a>, <a href="https://vapor.laravel.com" class="underline">Vapor</a>, <a href="https://nova.laravel.com" class="underline">Nova</a>, and <a href="https://envoyer.io" class="underline">Envoyer</a> help you take your projects to the next level. Pair them with powerful open source libraries like <a href="https://laravel.com/docs/billing" class="underline">Cashier</a>, <a href="https://laravel.com/docs/dusk" class="underline">Dusk</a>, <a href="https://laravel.com/docs/broadcasting" class="underline">Echo</a>, <a href="https://laravel.com/docs/horizon" class="underline">Horizon</a>, <a href="https://laravel.com/docs/sanctum" class="underline">Sanctum</a>, <a href="https://laravel.com/docs/telescope" class="underline">Telescope</a>, and more.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+#restartText {
+  font-family: 'Turret Road', cursive;
+  font-weight: 700;
+  fill:rgb(255, 255, 255);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0;
+}
+</style>
+<script>
+    var polygons = document.querySelectorAll("#hexs polygon");
+var restartPolygon = document.getElementById("restartPolygon");
+var restartText = document.getElementById("restartText");
+var redDot = document.getElementById("redDot");
+var startText = document.getElementById("startText");
+var center = 85;
+var polygonCenter = polygons[center];
+polygonCenter.classList.add("center");
+var polygonsRows = [];
+var j = -1;
+var desetica = 1;
+for (var i = 1; i < 10; i++) {
+    window['polygons' + i] = [];
+    polygonsRows.push(window['polygons' + i])
+}
+for (var i = 0; i < polygons.length; i++) {
+    j++;
+    if (j < 19) {
+        window['polygons' + desetica].push(polygons[i]);
+        if (j === 18) {
+            j = -1;
+            desetica++;
+        }
+    }
+}
 
-                <div class="flex justify-center mt-4 sm:items-center sm:justify-between">
-                    <div class="text-center text-sm text-gray-500 sm:text-left">
-                        <div class="flex items-center">
-                            <svg fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor" class="-mt-px w-5 h-5 text-gray-400">
-                                <path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
+function changeCentar() {
+    startText.setAttribute("x", polygonCenter.getBBox().x);
+    startText.setAttribute("y", polygonCenter.getBBox().y)
+    startText.setAttribute("textLength", polygonCenter.getBBox().width - 10)
+}
+changeCentar();
+window.onresize = function (event) {
+    changeCentar();
+}
 
-                            <a href="https://laravel.bigcartel.com" class="ml-1 underline">
-                                Shop
-                            </a>
+polygonCenter.addEventListener("click", function () {
+    tl.play("start");
+    this.removeEventListener("click", arguments.callee);
+}, false);
 
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" class="ml-4 -mt-px w-5 h-5 text-gray-400">
-                                <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
-                            </svg>
+//GSAP Timeline
+var tl = new TimelineMax({ delay: 0.5, paused: true });
 
-                            <a href="https://github.com/sponsors/taylorotwell" class="ml-1 underline">
-                                Sponsor
-                            </a>
-                        </div>
-                    </div>
+//do nothing
+tl.to(redDot, 0.5, { y: -1 });
+tl.add("start");
+tl.set(redDot, { visibility: "hidden" });
+tl.set(polygonCenter, { opacity: 1 });
+tl.to(polygons[center - 19], 0.1, { opacity: 0.2, delay: 0.1 });
+tl.to(polygons[center - 20], 0.1, { opacity: 0.2, delay: 0.1 });
+tl.to(polygons[center - 1], 0.1, { opacity: 0.2, delay: 0.1 });
+tl.to(polygons[center + 18], 0.1, { opacity: 0.2, delay: 0.1 });
+tl.to(polygons[center + 19], 0.1, { opacity: 0.2, delay: 0.1 });
+tl.to(polygons[center + 1], 0.1, { opacity: 0.2, delay: 0.1 });
+tl.to(polygons[center], 0.1, { opacity: 0, delay: 0.1 })
+tl.to(startText, 0.5, { scale: 2.2, transformOrigin: "50% 50%", ease: Elastic.easeOut.config(1, 0.3) }, "-=0.6");
+tl.to(polygons, 1, { rotation: 30, x: 20, y: -10 });
+tl.add("HeyYOU");
+tl.call(function () { startText.innerHTML = "Hey YOU!" });
+tl.set(startText, { opacity: 0, attr: { textLength: 160 }, scale: 1, x: -50, fontSize: "2.5vw" });
+tl.staggerTo(polygons, 0.7, { scaleX: 1.2, scaleY: 0.8, ease: Power1.easeOut, stagger: { amount: 0.5, from: "center" } }, "HeyYOU");
+tl.to(startText, 0.7, { opacity: 1, }, "HeyYOU");
+tl.set(startText, { x: "+=47px", scale: 1.3 });
+tl.call(function () { startText.innerHTML = "you" });
+tl.to(startText, 1, { attr: { textLength: 60 }, ease: Elastic.easeOut.config(1, 0.3) });
+tl.staggerTo(polygons, 1, { scaleX: 1, scaleY: 1, ease: Power1.easeOut, stagger: { amount: 0.3, from: "center" } });
+tl.call(function () { startText.innerHTML = "are" });
+tl.to(startText, 0.5, { scale: 1.8, transformOrigin: "50% 50%", ease: Elastic.easeOut.config(1, 0.3) }, "-=0.5");
+tl.staggerTo(polygons, 0.7, { scaleX: 0.1, scaleY: 2, ease: Power1.easeOut, stagger: { amount: 0.5, from: "center" } });
+tl.call(function () { startText.innerHTML = "awesome" });
+tl.to(startText, 0.5, { attr: { textLength: 160 }, scale: 1, x: -60, ease: Elastic.easeOut.config(1, 0.3) })
+tl.staggerTo(polygons, 0.7, { scaleX: 1, scaleY: 1, ease: Power1.easeOut, stagger: { amount: 0.5, from: "center" } });
+tl.staggerTo(polygons, 1, { opacity: 0, ease: Elastic.easeInOut.config(1, 0.3), stagger: { amount: 0.5, from: "center" } });
+tl.to(startText, 0.2, { opacity: 0 }, "-=1.2");
+tl.set(polygons, { y: 500, opacity: 1 });
+tl.staggerTo(polygonsRows, 1, { y: 0, ease: Power3.easeOut, stagger: { amount: 1 } });
+tl.staggerTo(polygons, 1, { rotation: 0, x: 0, y: 0, ease: Back.easeOut.config(1.7), stagger: { amount: 1 } });
+tl.staggerTo(polygons, 1.5, { rotation: 0, ease: Elastic.easeInOut.config(1, 0.3), cycle: { x: [0, 50] }, stagger: { amount: 0.5 } });
+tl.staggerTo(polygons, 1.5, { x: 0, ease: Elastic.easeInOut.config(1, 0.3), cycle: { x: [50, 0], scale: [0, 1.2] }, stagger: { amount: 0.5 } });
+tl.staggerTo(polygons, 1, { scale: 1, x: 0, ease: Elastic.easeInOut.config(1, 0.3), stagger: { amount: 0.5 } });
+tl.staggerTo(polygons, 2, { scale: 0.5, rotation: 90, ease: Elastic.easeInOut.config(1, 0.3), cycle: { y: [16, -16, 8, -8] }, stagger: { amount: 0.5 } });
+tl.staggerTo(polygons, 1.5, { scale: 1, rotation: -120, y: 70, x: 10, stagger: { amount: 0.5, from: "end" } });
+tl.staggerTo(polygons, 0.2, { fill: "url(#transparentGradient)", ease: Elastic.easeInOut.config(1, 0.3), stagger: { amount: 0.2, from: center } }, "-=0.5");
+tl.staggerTo(polygons, 2, { rotation: -60, yoyo: true, repeat: 1, ease: Sine.easeInOut, cycle: { y: [150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 150, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] }, stagger: { amount: 0.5 } });
+tl.to(polygonCenter, 1, { scale: 0, rotation: 360, transformOrigin: "50% 50%" });
+tl.staggerTo("polygon:not(.center)", 1, { scale: 1, x: 0, y: 0, rotation: 0, ease: Elastic.easeInOut.config(1, 0.3) });
+tl.to(".bg", 1, { opacity: 0 }, 31);
+tl.call(function () { document.getElementById("wrapper").style.animationPlayState = 'running' }, this, 30);
+tl.call(restartShow, this, 32);
+tl.set(redDot, { visibility: "visible" });
+tl.to(redDot, 0.4, { opacity: 0, yoyo: true, repeat: -1 });
+tl.set(restartPolygon, { cursor: "pointer" });
 
-                    <div class="ml-4 text-center text-sm text-gray-500 sm:text-right sm:ml-0">
-                        Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+
+function restartShow() {
+    var x = Math.floor(restartPolygon.getBBox().width / 2 + restartPolygon.getBBox().x);
+    var y = Math.floor(restartPolygon.getBBox().height / 2 + restartPolygon.getBBox().y);
+
+    redDot.setAttribute("cx", x + "px");
+    redDot.setAttribute("cy", y + 20 + "px");
+
+    restartText.setAttribute("x", x + "px");
+    restartText.setAttribute("y", y + "px");
+
+    tl.to(restartPolygon, 1.7, { opacity: 0.5 }, "-=1");
+    tl.to(restartText, 1.7, { opacity: 1 }, "-=1");
+
+    restartPolygon.addEventListener("click", function () {
+        startText.innerHTML = "Start";
+        tl.restart();
+        this.removeEventListener("click", arguments.callee);
+    }, false);
+
+}
+</script>

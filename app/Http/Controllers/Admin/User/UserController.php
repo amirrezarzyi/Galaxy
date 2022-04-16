@@ -4,13 +4,11 @@ namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
-use App\Actions\Fortify\PasswordValidationRules;
 use App\Http\Requests\Admin\User\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    use PasswordValidationRules;
 
     public function index(){
         $users = User::orderby('id','DESC')->paginate(2);;
