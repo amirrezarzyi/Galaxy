@@ -178,6 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\FortifyServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 

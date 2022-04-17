@@ -64,6 +64,15 @@
                     </span>
                 </button>
             </div>
+            <div class="step" data-target="#role-step-vertical" role="tab" id="role-step-vertical-trigger">
+                <button type="button" class="step-trigger">
+                    <span class="bs-stepper-box">4</span>
+                    <span class="bs-stepper-label">
+                        <span class="bs-stepper-title">نقش ها وسترسی ها</span>
+                        <span class="bs-stepper-subtitle">اضافه کردن دسترسی ها به کاربر</span>
+                    </span>
+                </button>
+            </div>
         </div>
         <div class="bs-stepper-content">
         <form action="{{ route('admin.user.store') }}" method="POST">
@@ -181,6 +190,36 @@
                     </div>
                 </div>
                 <div class="d-flex justify-content-between">
+                    <button type="button" class="btn btn-primary btn-prev">
+                        <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
+                        <span class="align-middle d-sm-inline-block d-none">قبلی</span>
+                    </button>
+                    <button type="button" class="btn btn-primary btn-next">
+                        <span class="align-middle d-sm-inline-block d-none">بعدی</span>
+                        <i data-feather="arrow-right" class="align-middle ms-sm-25 ms-0"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="role-step-vertical" class="content" role="tabpanel" aria-labelledby="role-step-vertical-trigger">
+                <div class="content-header">
+                    <h5 class="mb-0">نقش ها و سترسی ها</h5>
+                    <small class="text-muted">نقش دادن به کاربر</small>
+                </div>
+                <div class="row">
+                    <div class="list-group">
+                        @foreach ($roles as $role)
+                                <label for="{{ $role->id }}">
+                                <li class="list-group-item list-group-item-action me-3">
+                                    <input class="form-check-input me-1" type="checkbox" name="roles[]"
+                                     value="{{$role->id}}" id="{{ $role->id }}"/>
+
+                                <label for="{{ $role->id }}">{{ $role->name }}</label>
+                                </li>
+                                </label>
+                        @endforeach
+                     </div><span class="error">@error('roles') {{$message}} @enderror</span>
+                </div>
+                <div class="d-flex justify-content-between mt-2">
                     <button type="button" class="btn btn-primary btn-prev">
                         <i data-feather="arrow-left" class="align-middle me-sm-25 me-0"></i>
                         <span class="align-middle d-sm-inline-block d-none">قبلی</span>

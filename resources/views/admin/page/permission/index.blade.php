@@ -61,14 +61,10 @@
                          </tr>
                       </thead>
                       <tbody>
-                         {{-- @foreach ($permissions as $permission) --}}
+                         @foreach ($permissions as $permission)
                          <tr>
-                            {{--
                             <td>{{ $loop->iteration }}</td>
-                            --}}
-                            {{--
                             <td>{{$permission->name}}</td>
-                            --}}
                             <td>
                                <div class="dropdown">
                                   <button type="button"
@@ -89,11 +85,11 @@
                                </div>
                             </td>
                          </tr>
-                         {{-- @endforeach --}}
+                        @endforeach
                       </tbody>
                    </table>
                    <div class="mt-4">
-                      {{-- {{$permissions->links()}} --}}
+                      {{$permissions->links()}}
                    </div>
                 </div>
              </div>
@@ -111,13 +107,14 @@
           </div>
           <div class="modal-body px-5 pb-5">
              <div class="text-center mb-4">
-                <h1>ایجاد دسترسی  جدید</h1>
+                <h1>ایجاد دسترسی جدید</h1>
              </div>
              <!-- Add role form -->
-             <form id="addRoleForm" class="row" onsubmit="return true">
+             <form id="addRoleForm" action="{{ route('admin.permission.store')  }}" method="post" class="row" onsubmit="return true">
+                @csrf
                 <div class="col-12">
-                   <label class="form-label" for="modalRoleName">نام دسترسی</label>
-                   <input type="text" id="modalRoleName" name="modalRoleName" class="form-control" placeholder="نام دسترسی را وارد کنید" tabindex="-1" data-msg="نام نقش را وارد کنید" />
+                   <label class="form-label" for="name">نام دسترسی</label>
+                   <input type="text" id="name" name="name" class="form-control" placeholder="نام دسترسی را وارد کنید" tabindex="-1" data-msg="نام نقش را وارد کنید" />
                 </div>
                 <div class="col-12 text-center mt-2">
                    <button type="submit" class="btn btn-primary me-1">ذخیره</button>

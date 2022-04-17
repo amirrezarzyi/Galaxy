@@ -23,6 +23,6 @@ class ProfileController extends Controller
     public function destroy(Session $session)
     {
         $session->delete();
-        return redirect()->route('admin.user.profile');
+        return redirect()->route('admin.profile');
     }
 }
