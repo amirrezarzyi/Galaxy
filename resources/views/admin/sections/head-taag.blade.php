@@ -11,5 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600" rel="stylesheet">
     {{-- use link  --}}
     @yield('styles')
+    {{-- toaster --}}
+    <link rel="stylesheet" type="text/css" href="{{ asset('/admin-assets/app-assets/vendors/css/extensions/toastr.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{asset('admin-assets/app-assets/css-rtl/plugins/extensions/ext-component-toastr.css')}}">
 
  </head>

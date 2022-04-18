@@ -49,7 +49,10 @@
     @include('admin.sections.footer')
 
     @yield('scripts')
-
+    {{-- toaster --}}
+    <script src="{{asset('admin-assets/app-assets/vendors/js/extensions/toastr.min.js')}}"></script>
+    {{-- <script src="{{asset('admin-assets/app-assets/js/scripts/extensions/ext-component-toastr.js')}}"></script> --}}
+    @include('admin.alerts.toast.session')
     <script>
         $(window).on('load', function() {
             if (feather) {

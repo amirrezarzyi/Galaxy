@@ -29,7 +29,7 @@
 @endsection
 
 @section('title', 'نقش ها')
-@section('title-h2', 'نقش ها وسترسی ها')
+@section('title-h2', 'نقش ها و دسترسی ها')
 @section('title-li')
     <li class="breadcrumb-item">لیست نقش ها </li>
 @endsection
@@ -71,7 +71,10 @@
             <div class="d-flex justify-content-between">
                <span>مجموعا {{ count($role->users) }} کاربر </span>
                <ul class="list-unstyled d-flex align-items-center avatar-group mb-0">
-                @foreach($role->users as $profile)
+                   @if (count($role->users) >= 4)
+                   <div class="me-1"><i data-feather='more-horizontal'></i></div>
+                   @endif
+                @foreach($role->users->slice(0, 4) as $profile)
                   <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" title="" class="avatar avatar-sm pull-up" data-bs-original-title="{{$profile->name}}">
                      <img class="rounded-circle" src="{{ asset('/admin-assets/app-assets/images/portrait/small/avatar-s-0.jpg') }}" alt="Avatar">
                   </li>

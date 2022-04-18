@@ -20,7 +20,7 @@ class RoleController extends Controller
     public function store(Request $request){
         $role = Role::create(['name' => $request->name]);
         $role->syncPermissions($request->permissions);
-        return to_route('admin.role.index');
+        return to_route('admin.role.index')->with('toast-success','نقش جدید ایجاد شد');;
     }
 
     public function update(Role $role,Request $request){

@@ -32,7 +32,7 @@ class UserController extends Controller
 
         $user->syncRoles($request->roles);
 
-        return redirect()->route('admin.user.index');
+        return redirect()->route('admin.user.index')->with('toast-success','کاربر جدید ایجاد شد');;
     }
 
     public function destroy(User $user){

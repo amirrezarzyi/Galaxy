@@ -29,12 +29,12 @@
     <!-- END: Custom CSS-->
 @endsection
 
-@section('title', 'کاربران')
-@section('title-h2', 'کاربران')
+@section('title', 'نقش ها و دسترسی ها')
+@section('title-h2', 'نقش ها و دسترسی ها')
 @section('title-li')
-    <li class="breadcrumb-item">لیست کاربران </li>
+    <li class="breadcrumb-item">لیست دسترسی ها </li>
 @endsection
-@section('content')
+@section('content') 
 <section class="app-user-list">
     <!-- list and filter start -->
     <div class="card">
@@ -61,7 +61,7 @@
                          </tr>
                       </thead>
                       <tbody>
-                         @foreach ($permissions as $permission)
+                        @foreach ($permissions as $permission)
                          <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{$permission->name}}</td>
@@ -77,10 +77,14 @@
                                      <i data-feather='edit-2'></i>
                                      <span>ویرایش</span>
                                      </a>
-                                     <a class="dropdown-item" href="#">
-                                     <i data-feather='trash'></i>
-                                     <span>حذف</span>
-                                     </a>
+                                     <form action="{{ route('admin.permission.destroy',$permission->id) }}" method="post">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="dropdown-item" href="#">
+                                        <i data-feather='trash'></i>
+                                        <span>حذف</span>
+                                        </button>
+                                    </form>
                                   </div>
                                </div>
                             </td>
