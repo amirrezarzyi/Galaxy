@@ -34,6 +34,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     //User
     Route::prefix('user')->group(function () {
         Route::get('/', [UserController::class, 'index'])->name('admin.user.index');
+        Route::get('/getUsers', [UserController::class, 'getUsers'])->name('admin.user.getUsers');
         Route::get('/create', [UserController::class, 'create'])->name('admin.user.create');
         Route::post('/store', [UserController::class, 'store'])->name('admin.user.store')->middleware(['role:سوپر ادمین']);
         Route::delete('/destroy/{user}', [UserController::class, 'destroy'])->name('admin.user.destroy')->middleware(['role:سوپر ادمین']);
@@ -44,7 +45,7 @@ Route::prefix('/admin')->middleware(['auth'])->group(function () {
     Route::prefix('role')->group(function () {
         Route::get('/', [RoleController::class, 'index'])->name('admin.role.index');
         Route::post('/store', [RoleController::class, 'store'])->name('admin.role.store')->middleware(['role:سوپر ادمین']);
-        Route::put('//update/{role}', [RoleController::class, 'update'])->name('admin.role.update')->middleware(['role:سوپر ادمین']);
+        Route::put('/update/{role}', [RoleController::class, 'update'])->name('admin.role.update')->middleware(['role:سوپر ادمین']);
         Route::delete('/destroy/{role}', [RoleController::class, 'destroy'])->name('admin.role.destroy')->middleware(['role:سوپر ادمین']);
         Route::put('/update-permission/{role}', [RoleController::class, 'updatePermission'])->name('admin.role.update-permission')->middleware(['role:سوپر ادمین']);
 
